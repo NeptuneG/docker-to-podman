@@ -105,7 +105,10 @@ source $ZSH/oh-my-zsh.sh
 alias pc="podman-compose"
 alias pa="podman attach --sig-proxy=false"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
