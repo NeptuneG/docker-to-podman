@@ -4,6 +4,7 @@ Vagrant.configure('2') do |config|
   config.vm.provider 'virtualbox' do |vb|
     vb.memory = '1024'
   end
+  config.vm.provision :shell, inline: 'cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime'
   config.vm.provision :shell, inline: 'setenforce 0', run: 'always'
 
   config.vm.provision 'shell', path: 'setup.sh', privileged: false
